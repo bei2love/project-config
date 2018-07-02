@@ -3,3 +3,9 @@ zuul:
     add-service-demo:
       path: /add-service/**
       serviceId: add-service-demo
+spring:
+  rabbitmq:
+    host: 192.168.1.21
+    port: 5672
+    username: guest
+    password: guest
