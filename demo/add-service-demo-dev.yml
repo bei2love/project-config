@@ -9,6 +9,6 @@ spring:
     port: 5672
     username: guest
     password: guest
-my
-  info
+my:
+  info:
     str : 123
