@@ -1,0 +1,3 @@
+profile: dev
+spring
+  port : 8100
