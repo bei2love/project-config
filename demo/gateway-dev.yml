@@ -2,7 +2,7 @@ zuul:
   routes:
     add-service-demo:
       path: /add-service/**
-      serviceId: add-service-demo
+      serviceId: add-service
 spring:
   rabbitmq:
     host: 192.168.1.221
