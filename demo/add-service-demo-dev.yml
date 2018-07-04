@@ -1,14 +1,14 @@
 server:
-  port:8100
+  port : 8100
   
 logging:
-  file:springboot.log
+  file : springboot.log
 spring:
   rabbitmq:
-    host:192.168.1.221
-    port:5672
-    username:root
-    password:kshop
+    host : 192.168.1.221
+    port : 5672
+    username : root
+    password : kshop
 my:
   info:
-    str:123000000a
+    str : 123000000a
