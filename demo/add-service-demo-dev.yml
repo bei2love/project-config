@@ -11,4 +11,4 @@ spring:
     password : kshop
 my:
   info:
-    str : 123000000a
+    str : 123
