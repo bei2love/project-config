@@ -3,7 +3,7 @@ server:
 
 spring:
   profiles:
-    active: zipkin-server
+    active: dev
   rabbitmq:
     host: 192.168.1.221
     port: 5672
@@ -11,7 +11,7 @@ spring:
     password: kshop
   datasource:
     schema: classpath:/mysql.sql
-    url: jdbc:mysql://192.168.1.21:3306/sleuth_log
+    url: jdbc:mysql://192.168.1.223:3306/sleuth_log
     username: root
     password: 123456
     initialize: true
