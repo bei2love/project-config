@@ -5,7 +5,7 @@ zuul:
       serviceId: add-service
 spring:
   rabbitmq:
-    host: 192.168.1.221
+    host: 192.168.27.221
     port: 5672
     username: root
     password: kshop
