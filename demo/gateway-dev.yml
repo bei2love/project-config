@@ -8,7 +8,7 @@ zuul:
       serviceId: random-service
 spring:
   rabbitmq:
-    host: 192.168.27.221
+    host: 192.168.23.221
     port: 5672
     username: root
     password: kshop
