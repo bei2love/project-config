@@ -3,6 +3,9 @@ zuul:
     add-service-demo:
       path: /add-service/**
       serviceId: add-service
+    random-service-demo:
+      path: /random/**
+      serviceId: random-service
 spring:
   rabbitmq:
     host: 192.168.27.221
