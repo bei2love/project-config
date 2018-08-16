@@ -11,4 +11,4 @@ spring:
     password: kshop
 my:
   info:
-    str: 123abc
+    str: 123abc123大复杂水电费
