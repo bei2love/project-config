@@ -31,3 +31,8 @@ spring:
       percentage: 0.1
   zipkin:
     base-url: http://localhost:9841
+  rabbitmq:
+    host: 192.168.23.221
+    port: 5672
+    username: root
+    password: kshop
