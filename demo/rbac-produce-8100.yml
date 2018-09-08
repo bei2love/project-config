@@ -3,7 +3,7 @@
 
 server:
   port: 8100
-
+  swagger-enable: true
 spring:
   application:
     name: dinner-produce
