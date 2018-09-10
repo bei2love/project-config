@@ -8,7 +8,7 @@ spring:
   profiles:
     active: dev
   rabbitmq:
-    host: 192.168.1.221
+    host: 192.168.23.221
     port: 5672
     username: root
     password: kshop
