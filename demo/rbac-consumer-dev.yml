@@ -3,28 +3,10 @@ server:
   swagger-enable: true
 spring:
   application:
-    name: rbac-consumer
-  datasource:
-    filters: stat,wall,log4j
-    initialSize: 5
-    maxActive: 20
-    maxPoolPreparedStatementPerConnectionSize: 20
-    maxWait: 60000
-    minEvictableIdleTimeMillis: 300000
-    minIdle: 5
-    poolPreparedStatements: true
-    testOnBorrow: false
-    testOnReturn: false
-    testWhileIdle: true
-    timeBetweenEvictionRunsMillis: 60000
-    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.23.223:3306/hyll_springboot?characterEncoding=utf-8
-    username: root
-    password: 123456
-    validationQuery: SELECT 1 FROM DUAL
+    name: rbac-produce
   sleuth:
     sampler:
+      # 当前日志信息收集百分比
       percentage: 0.1
   zipkin:
     base-url: http://localhost:9841
@@ -33,3 +15,51 @@ spring:
     port: 5672
     username: root
     password: kshop
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+feign:
+  hystrix:
+    enabled: true
+  compression:
+    # 开启GZIP的压缩功能以减少http通信的消耗
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
+    response:
+      enabled: true
+# 这里需要注意一点， Ribbon的超时与Hystrix的超时是两个概念。 为了让上述的重试机制实现有效，我们需要让Hystrix的超时时间大于Ribbon的超时时间， 否则Hystrix命令超时后，该命令直接熔断， 重试机制就 没有任何意义了。
+# Hystrix的全局的超时时间。
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+
+ribbon:
+  # 设置全局超时时间
+  ReadTimeout: 1000
+RBAC-PRODUCE:
+  ribbon:
+    ConnectTimeout: 250
+    #请求处理的超时时间，该超时时间的影响层级大于全局的超时时间,设置了该时间那么，
+    #如果调用生产端的时候超过1秒那么就直接调用重试规则，因此若重试次数和切换次数都是为1那么，响应的时间不超过4秒
+    ReadTimeout: 1000
+    #对所有操作请求都进行重试
+    OkToRetryOnAllOperations: true
+    # 以下重试实现响应EUREKA-PRODUCER的最大次数是 ：（1 + MaxAutoRetries）* （1 + MaxAutoRetriesNextServer）
+    # 假设 MaxAutoRetries = 2 ，MaxAutoRetriesNextServer = 4 ，那么最大的重试次数为15次
+    # 切换实例的重试次数
+    MaxAutoRetriesNextServer: 1
+    # 对当前实例的重试次数。
+    MaxAutoRetries: 1
+
