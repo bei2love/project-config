@@ -6,9 +6,50 @@ zuul:
     random-service-demo:
       path: /random/**
       serviceId: random-service
+    v1/rbac:
+      path: /v1/rbac/**
+      serviceId: rbac-consumer
+      sensitiveHeaders:
+  add-host-header: true
+
+ribbon:
+  SocketTimeout: 250
+  ReadTimeout: 50000
+#断路器的超时时间,断路器的超时时间需要大于ribbon的超时时间，不然不会触发重试。
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
+feign:
+  hystrix:
+    enabled: true
+  compression:
+    # 开启GZIP的压缩功能以减少http通信的消耗
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
+    response:
+      enabled: true
 spring:
   rabbitmq:
     host: 192.168.23.221
     port: 5672
     username: root
     password: kshop
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+
+AUTHENTICATION-CENTER:
+  ribbon:
+    ConnectTimeout: 250
+    MaxAutoRetries: 1
+    MaxAutoRetriesNextServer: 1
+    OkToRetryOnAllOperations: true
+    ReadTimeout: 3000
