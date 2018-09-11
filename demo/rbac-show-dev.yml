@@ -33,6 +33,11 @@ spring:
     port: 6379
     pool:
       max-idle: 20
+  rabbitmq:
+    host: 192.168.23.221
+    port: 5672
+    username: root
+    password: kshop
   thymeleaf:
     cache: false
     mode: LEGACYHTML5
