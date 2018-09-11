@@ -3,7 +3,7 @@ server:
   swagger-enable: true
 spring:
   application:
-    name: rbac-produce
+    name: rbac-consumer
   sleuth:
     sampler:
       # 当前日志信息收集百分比

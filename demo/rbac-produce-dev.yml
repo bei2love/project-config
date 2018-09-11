@@ -3,7 +3,7 @@ server:
   swagger-enable: true
 spring:
   application:
-    name: dinner-produce
+    name: rbac-produce
   datasource:
     filters: stat,wall,log4j
     initialSize: 5
