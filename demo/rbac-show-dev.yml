@@ -1,0 +1,39 @@
+server:
+  port: 10010
+mybatis:
+  config-locations: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+security:
+  ignored: /api/*,/css/*,/js/*,/images/*,/fonts/*,/font-awesome/*
+spring:
+  datasource:
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    driverClassName: com.mysql.jdbc.Driver
+    filters: stat,wall,log4j
+    initialSize: 5.0
+    maxActive: 20.0
+    maxPoolPreparedStatementPerConnectionSize: 20.0
+    maxWait: 60000.0
+    minEvictableIdleTimeMillis: 300000.0
+    minIdle: 5.0
+    poolPreparedStatements: true
+    testOnBorrow: false
+    testOnReturn: false
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000.0
+    url: jdbc:mysql://192.168.23.223:3306/hyll_springboot?characterEncoding=utf-8
+    username: root
+    password: 123456
+    validationQuery: SELECT 1 FROM DUAL
+  jackson:
+    serialization:
+      indent_output: true
+  redis:
+    host: 192.168.23.223
+    port: 6379
+    pool:
+      max-idle: 20
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+
