@@ -6,10 +6,6 @@ zuul:
     random-service-demo:
       path: /random/**
       serviceId: random-service
-    v1/rbac:
-      path: /v1/rbac/**
-      serviceId: rbac-consumer
-      sensitiveHeaders:
   add-host-header: true
 
 ribbon:
