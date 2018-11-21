@@ -41,13 +41,13 @@ spring:
 
   ignore:
     urls:
-    - /authentication/**
-    - /**/*.css
-    - /social
-    - /signin
-    - /signup
-    - /info
-    - /health
-    - /metrics/**
-    - /loggers/**
-    - /mobile/token
+      - /authentication/**
+      - /**/*.css
+      - /social
+      - /signin
+      - /signup
+      - /info
+      - /health
+      - /metrics/**
+      - /loggers/**
+      - /mobile/token
