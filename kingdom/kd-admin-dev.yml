@@ -1,0 +1,23 @@
+# datasoure默认使用JDBC
+spring:
+  datasource:
+    name: kd-admin
+    username: root
+    password: 123456
+    url: jdbc:mysql://mysql-host:3306/kd-auth?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 28800
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
