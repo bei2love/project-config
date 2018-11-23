@@ -40,6 +40,8 @@ mybatis-plus:
       logic-delete-value: Y
       logic-not-delete-value: N
       db-type: mysql
+      #表名前缀
+      table-prefix: kd_
     refresh: true
       #自定义填充策略接口实现
     #meta-object-handler: com.baomidou.springboot.xxx
