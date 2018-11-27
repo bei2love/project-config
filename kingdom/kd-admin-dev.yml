@@ -37,8 +37,8 @@ mybatis-plus:
       #数据库大写下划线转换
       #capital-mode: true
       #逻辑删除配置
-      logic-delete-value: Y
-      logic-not-delete-value: N
+      logic-delete-value: 1
+      logic-not-delete-value: 0
       db-type: mysql
       #表名前缀
       table-prefix: kd_
