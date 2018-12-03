@@ -36,6 +36,10 @@ spring:
             redis-rate-limiter.burstCapacity: 1  #流速 每秒
             rate-limiter: "#{@defaultRedisRateLimiter}"  #SPEL表达式去的对应的bean
             key-resolver: "#{@remoteAddressKeyResolver}" #SPEL表达式去的对应的bean
+        - name: Hystrix
+            args:
+              name: fallbackcmd
+              fallbackUri: forward:/fallbackcontroller
       routes:
         # =====================================
         - id: kd-admin
