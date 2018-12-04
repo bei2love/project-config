@@ -63,7 +63,7 @@ gate:
       startWith: /oauth,/open
 
 auth:
-  serviceId: kd-auth
+  serviceId: kd-auth-server
   user:
     token-header: Authorization
   client:

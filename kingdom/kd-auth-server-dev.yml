@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ace-auth
+    name: kd-auth-server
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
@@ -12,7 +12,7 @@ spring:
     pool:
     max-active: 20
   datasource:
-    name: kd-auth
+    name: kd-auth-server
     username: root
     password: 123456
     url: jdbc:mysql://mysql-host:3306/kd_auth_v1?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
@@ -72,7 +72,7 @@ mybatis-plus:
       logic-not-delete-value: 0
       db-type: mysql
       #表名前缀
-      table-prefix: kd_
+      #table-prefix: kd_
     refresh: true
     #自定义填充策略接口实现
     #meta-object-handler: com.baomidou.springboot.xxx
