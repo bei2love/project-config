@@ -62,6 +62,16 @@ gate:
     authentication:
       startWith: /oauth,/open
 
+auth:
+  serviceId: kd-auth
+  user:
+    token-header: Authorization
+  client:
+    token-header: x-client-token
+    id: kd-gateway #不填则默认读取spring.application.name
+    secret: 123456
+
+
 management:
   endpoints:
     web:
