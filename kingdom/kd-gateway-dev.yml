@@ -6,7 +6,7 @@ spring:
       routes:
       # 认证中心
       - id: kd-auth
-        uri: lb://kd-auth
+        uri: http://127.0.0.1:19000/
         predicates:
           - Path=/auth/**
         filters:
