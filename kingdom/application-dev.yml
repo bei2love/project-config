@@ -83,3 +83,5 @@ security:
     resource:
       loadBalanced: true
       token-info-uri: http://127.0.0.1:19000/oauth/check_token
+      
+logging.level.org.springframework.security: DEBUG
