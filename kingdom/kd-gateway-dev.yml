@@ -31,11 +31,11 @@ spring:
             args:
               name: default
               fallbackUri: 'forward:/fallback'
-      # 代码生成模块
-      - id: kd-codegen
-        uri: lb://kd-codegen
-        predicates:
-          - Path=/gen/**
+#      # 代码生成模块
+#      - id: kd-codegen
+#        uri: lb://kd-codegen
+#        predicates:
+#          - Path=/gen/**
 
 
 security:
