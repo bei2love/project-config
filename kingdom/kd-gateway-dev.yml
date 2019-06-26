@@ -47,3 +47,6 @@ security:
 ignore:
   clients:
     - kd
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
