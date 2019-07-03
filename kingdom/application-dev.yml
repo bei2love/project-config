@@ -82,6 +82,6 @@ security:
   oauth2:
     resource:
       loadBalanced: true
-      token-info-uri: http://127.0.0.1:19000/oauth/check_token
+      token-info-uri: http://kd-auth/oauth/check_token
       
 logging.level.org.springframework.security: DEBUG
