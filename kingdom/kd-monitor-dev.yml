@@ -2,5 +2,5 @@ spring:
   # 安全配置
   security:
     user:
-      name: "admin"     # kingdom
-      password: "admin" # kingdom
+      name: ENC(4ttsa3JvGu2+nwdRYByqIA==)     # kingdom
+      password: ENC(bMPwsnoSHg9BPcmi5RATxg==) # kingdom
